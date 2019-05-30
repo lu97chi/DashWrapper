@@ -1,13 +1,21 @@
-import { observable, action, configure, runInAction } from 'mobx';
+//@flow
+import React, { CSSProperties } from 'react';
+import { observable, action, computed } from 'mobx';
+import { Config } from './types';
 
-configure({ enforceActions: true });
-
-export default class name {
+export default class FormController {
   @observable
-  name = '';
+  form = {};
+
+  constructor({ fields, bind, joiValidation }: Config) {
+    this.fields = fields;
+    this.bind = bind;
+    this.joiValidation = joiValidation;
+  }
 
   @action
-  async functionName(params) {
-    runInAction(() => {});
-  }
+  check() {}
+
+  @computed
+  get computedProp() {}
 }

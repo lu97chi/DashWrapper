@@ -1,12 +1,13 @@
 // @flow strict
 
 import * as React from 'react';
+import FormController from './controller';
 type Props = {
-    controller:
+  controller: FormController,
 };
 
-function Form(props: Props) {
-  return <div />;
+function Form({ controller }: Props) {
+  return <div>{controller.fields.map(() => '')}</div>;
 }
 
 export default Form;

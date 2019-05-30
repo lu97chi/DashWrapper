@@ -1,7 +1,19 @@
-import React from 'react';
-import Card from '../../components/Card';
-function SignUp() {
-  return <div>ad</div>;
-}
+// @flow
+import React, { CSSProperties } from 'react';
+import { component } from 'rrsx';
+import { Container } from './styled';
+import FormCard from './containers/form-card';
+import Title from './containers/title';
 
-export default SignUp;
+type Props = { children: React.Component, style: CSSProperties };
+
+const SignUp = ({ style, children }: Props) => {
+  return (
+    <Container>
+      <Title />
+      <FormCard />
+    </Container>
+  );
+};
+
+export default component<Props>(SignUp);

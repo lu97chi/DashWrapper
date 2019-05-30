@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container, MainText, Line, Back } from './StyledComponents';
 import { NOT_FOUND } from './const';
-import { component } from '../../lib/service-manager';
+import { component } from 'rrsx';
 import { TranslateUp, TranslateDown, ScaleX } from '../animations';
 
 function Page404() {

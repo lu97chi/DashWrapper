@@ -1,14 +1,16 @@
 //@flow
-import React, { forwardRef, CSSProperties, createContext } from 'react';
-import { Container } from '../404/StyledComponents';
-import { component } from '../../lib/service-manager';
-import { withRouter } from 'react-router-dom';
+import React, { CSSProperties } from 'react';
+import { component } from 'rrsx';
+import { Container } from './styled';
 
-type Props = { children: React.Component, style: CSSProperties };
+type Props = {
+  children: React.Component,
+  style: CSSProperties,
+  className: string,
+};
 
 const Card = (props: Props) => {
-  const Component = props.children;
-  return <Container style={props.style || {}}>{props.children}</Container>;
+  return <Container {...props}>{props.children}</Container>;
 };
 
 export default component<Props>(Card);

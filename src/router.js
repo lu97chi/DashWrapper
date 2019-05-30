@@ -1,8 +1,8 @@
 //LayoutService contendra dos funciones(enable,disable) con la propiedad show
-import { createRouter } from './lib/router';
-
-import Root from './routes/root';
+// @flow
+import { createRouter } from 'rrsx';
 import SignUp from './routes/sign-up';
+import Main from './routes/main';
 /*path: '/auth/:id',
   Component: Component,
   disableLayout: [SideBar, TopBar],
@@ -15,14 +15,17 @@ import SignUp from './routes/sign-up';
 export const Router = createRouter(
   [
     {
-      path: '/',
-      exact: true,
-      component: Root
+      path: '/sign-up',
+      component: SignUp,
     },
     {
-      path: '/sign-up',
-      component: SignUp
-    }
+      path: '/',
+      component: Main,
+    },
   ],
-  {}
+  {
+    default: {
+      redirect: '/sign-up',
+    },
+  },
 );

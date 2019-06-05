@@ -11,14 +11,12 @@ export function model(obj, prop) {
     obj[prop] = ev.target.value;
   };
 }
-
-export default
 @service({})
 class TodoService {
   @observable list: Array<Item> = [{ name: 'Hola mundo' }];
 
   @observable text: string = '';
-
+  init = () => {};
   @action add(item: Item) {
     this.list.push(item);
   }
@@ -27,3 +25,5 @@ class TodoService {
     this.list.splice(index, 1);
   }
 }
+
+export default TodoService;

@@ -51,7 +51,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "resolve": "1.10.0",
-    "rrsx": "^1.1.56",
+    "rrsx": "^1.1.588",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "styled-components": "^4.1.3",

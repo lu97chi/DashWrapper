@@ -23,9 +23,5 @@ export const Router = createRouter(
       component: Main,
     },
   ],
-  {
-    default: {
-      redirect: '/sign-up',
-    },
-  },
+  {},
 );

@@ -4,4 +4,7 @@ export const defaults = {
   notFound: {
     default: <div>Not found</div>,
   },
+  waitFor: {
+    default: () => <div>Loading</div>,
+  },
 };

@@ -3,6 +3,9 @@
 import { createRouter } from 'rrsx';
 import SignUp from './routes/sign-up';
 import Main from './routes/main';
+import Dashboard from './routes/dashboard';
+import Dash from './routes/dash';
+import Playground from './routes/playground';
 /*path: '/auth/:id',
   Component: Component,
   disableLayout: [SideBar, TopBar],
@@ -19,9 +22,21 @@ export const Router = createRouter(
       component: SignUp,
     },
     {
+      path: '/dashboard',
+      component: Dashboard,
+    },
+    {
+      path: '/dash',
+      component: Dash
+    },
+    {
+      path: '/playground',
+      component: Playground
+    },
+    {
       path: '/',
       component: Main,
-    },
+    }
   ],
   {},
 );

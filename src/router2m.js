@@ -1,7 +1,7 @@
 //@flow
 import React from 'react';
 import { component } from 'rrsx';
-import { Router } from './router';
+import { Router } from './router2';
 
 type Props = { children: any, style: CSSStyleDeclaration, className: string };
 

@@ -4,9 +4,9 @@ export const HeaderData = {
     options: [
         {
             type: 'searcher',
-            icon: 'searcher',
+            icon: 'search',
             col: 2,
-            iconSize: '24px',
+            iconSize: '18px',
             iconColor: 'red',
         },
         {
@@ -14,7 +14,7 @@ export const HeaderData = {
             icon: 'user',
             text: 'Perfil',
             col: 2,
-            iconSize: '24px',
+            iconSize: '18px',
             iconColor: 'red',
         },
         {
@@ -23,8 +23,8 @@ export const HeaderData = {
             notifications: 12,
             badgeBackground: 'yellow',
             badgeColor: 'orange',
-            badgeOffset: [5,12],
-            iconSize: '24px',
+            badgeOffset: [8,-8],
+            iconSize: '18px',
             iconColor: 'yellow',
             notificationData: [
                 {
@@ -43,7 +43,7 @@ export const HeaderData = {
             icon: 'user',
             text: 'Perfil',
             col: 2,
-            iconSize: '24px',
+            iconSize: '18px',
             iconColor: 'red',
         },
         {
@@ -51,7 +51,7 @@ export const HeaderData = {
             icon: 'user',
             text: 'Perfil',
             col: 2,
-            iconSize: '24px',
+            iconSize: '18px',
             iconColor: 'red',
         },
     ]

@@ -31,7 +31,7 @@ export const Router = createRouter(
     },
     {
       path: '/playground',
-      component: Playground
+      component: Dash
     },
     {
       path: '/',

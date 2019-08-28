@@ -1,7 +1,7 @@
 //@flow
 import React from 'react';
 import { component } from 'rrsx';
-import Dashboard from '../dash';
+import Dashboard from '../dash/routes/main';
 import { HeaderData } from './contants';
 
 type Props = { children: any, style: CSSStyleDeclaration, className: string };

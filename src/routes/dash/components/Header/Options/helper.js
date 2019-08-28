@@ -7,7 +7,9 @@ import Searcher from './Searcher';
 export const getOption = (option, globalHandler) => {
     switch (option.type) {
         case 'searcher':
-            return  <Searcher />
+            return  <Searcher
+                option={option}
+            />
         case 'icon':
             return <ToolTip 
                 handleClick={(option) => globalHandler(option)} 

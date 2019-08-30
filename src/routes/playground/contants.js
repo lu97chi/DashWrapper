@@ -61,16 +61,44 @@ export const SidebarData = [
     {
         name: 'Perfil',
         route: 'perfil',
-        icon: 'user'
+        icon: 'user',
+        iconSize: '14px',
+        fontSize: '18px'
     },
     {
         name: 'Usuario',
         route: 'usuario',
-        icon: 'user'
+        icon: 'user',
+        iconSize: '14px',
+        fontSize: '18px',
+        nested: [
+            {
+                name: 'Algun nombre',
+                icon: 'search',
+                route: '/ruta2'
+            },
+            {
+                name: 'Algun nombre',
+                icon: 'search',
+                route: '/ruta2'
+            },
+            {
+                name: 'Algun nombre',
+                icon: 'search',
+                route: '/ruta2'
+            },
+            {
+                name: 'Algun nombre',
+                icon: 'search',
+                route: '/ruta2'
+            }
+        ]
     },
     {
         name: 'Estadisticas',
         route: 'estadisticas',
-        icon: 'user'
+        icon: 'user',
+        iconSize: '14px',
+        fontSize: '18px'
     },
 ]

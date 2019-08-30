@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Card } from 'antd';
 
-export const SidebarContainer = styled(Card)`
+export const SidebarContainer = styled.div`
     height: 100%;
     width: 100%;
     transition: .3s ease all;
+    border-right: 1px solid #E8E8E8;
 `;

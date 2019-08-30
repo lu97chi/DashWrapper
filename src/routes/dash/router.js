@@ -1,8 +1,8 @@
 //LayoutService contendra dos funciones(enable,disable) con la propiedad show
 // @flow
 import { createRouter } from 'rrsx';
-import Main from './routes/main'
 import Test from './routes/test';
+import Test2 from './routes/test2';
 /*path: '/auth/:id',
   Component: Component,
   disableLayout: [SideBar, TopBar],
@@ -12,16 +12,16 @@ import Test from './routes/test';
   onEnter: [() => {}],
   onClose: [() => {}]*/
 
-const parentRoute = 'playground';
+const parentRoute = '/playground';
 export const Router = createRouter(
   [
     {
-      path: `${parentRoute}`,
-      component: Main,
-    },
-    {
         path: `${parentRoute}/test`,
         component: Test
+    },
+    {
+      path: `${parentRoute}/test2`,
+      component: Test2
     }
   ],
   {},

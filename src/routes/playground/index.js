@@ -1,17 +1,19 @@
 //@flow
 import React from 'react';
 import { component } from 'rrsx';
-import Dashboard from '../dash/routes/main';
 import { HeaderData } from './contants';
 
 type Props = { children: any, style: CSSStyleDeclaration, className: string };
 
 const Playground = ({ style, children, className }: Props) => { 
-  return <Dashboard 
+  return <div 
     header
     sidebar
     headerData={HeaderData}
-  />;
+  >
+
+    dsad
+  </div>;
 };
 
 export default component<Props>(Playground);

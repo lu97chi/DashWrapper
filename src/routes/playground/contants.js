@@ -56,3 +56,21 @@ export const HeaderData = {
         },
     ]
 }
+
+export const SidebarData = [
+    {
+        name: 'Perfil',
+        route: 'perfil',
+        icon: 'user'
+    },
+    {
+        name: 'Usuario',
+        route: 'usuario',
+        icon: 'user'
+    },
+    {
+        name: 'Estadisticas',
+        route: 'estadisticas',
+        icon: 'user'
+    },
+]

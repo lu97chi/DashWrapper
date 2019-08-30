@@ -2,18 +2,13 @@
 import React from 'react';
 import { component } from 'rrsx';
 import { SidebarContainer } from './styledComponents';
+import MenuItem from './MenuItem';
 
 type Props = { children: any, style: CSSStyleDeclaration, className: string, open: Boolean };
 
-const Sidebar = ({ style, children, className, open }: Props) => {
+const Sidebar = ({ style, children, className, open, menu }: Props) => {
   return <SidebarContainer open={open}>
-    <p>item 1</p>
-    <p>item 1</p>
-
-    <p>item 1</p>
-
-    <p>item 1</p>
-
+    {menu.map((menuItem) => <MenuItem open={open}/>)}
   </SidebarContainer>;
 };
 

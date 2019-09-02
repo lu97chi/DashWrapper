@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { Icon } from 'antd';
+import { Theme } from '../../../playground/contants';
 
 const fullHeight = '64px';
+const { borderColorBase,  } = Theme;
 
 export const IconA = styled(Icon)`
     font-size: 24px;
@@ -18,12 +20,12 @@ export const MenuItem = styled.div`
     display: flex;
     align-items: center;
     &:hover{ 
-        background: #E8E8E8;
+        background: ${borderColorBase};
     }
 `;
 
 export const Card = styled.div`
-    border-bottom: 1px solid #E8E8E8;
+    border-bottom: 1px solid ${borderColorBase};
     height: ${fullHeight};
 `;
 

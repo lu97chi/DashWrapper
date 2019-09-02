@@ -7,15 +7,14 @@ import SlideOpen from '../SlideOpen';
 
 type Props = { children: any, style: CSSStyleDeclaration, className: string };
 
-const showNested = (elements, open, iconSize) => elements.map((item) => <SlideOpen paddingleft={iconSize} open={open} />)
+const showNested = (elements, open, iconSize) => elements.map((item) => <SlideOpen item={item} paddingleft={iconSize} open={open} />)
 
 const MenuItem = ({ style, children, classNamem ,open, menu }: Props) => {
   const { nested, iconSize, fontSize } = menu;
-  console.log(menu);
   const [ nestedOpen, setNestedOpen] = useState(false);
   return <div>
     <MenuItemContainer onClick={() => nested ? setNestedOpen(!nestedOpen) : null}>
-    <TextContainer>
+    <TextContainer iconSize={iconSize}>
       <Icon type="search" style={{fontSize: iconSize}} />
       <AText fontsize={fontSize} open={open}>boton</AText>
     </TextContainer>
@@ -29,7 +28,7 @@ const MenuItem = ({ style, children, classNamem ,open, menu }: Props) => {
     }
     </MenuItemContainer>
     {
-      nested ? <NestedContainer open={nestedOpen}>
+      open && nested ? <NestedContainer open={nestedOpen}>
         {showNested(nested, nestedOpen, iconSize)}
       </NestedContainer> : null
     }

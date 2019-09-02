@@ -1,14 +1,17 @@
 //@flow
 import React from 'react';
 import { component } from 'rrsx';
-import { SlideContainer, SlideBody } from './styledComponents';
+import { SlideContainer, SlideBody, TextSlideOpen } from './styledComponents';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string };
+type Props = { children: any, style: CSSStyleDeclaration, className: string, item: Object };
 
-const SlideOpen = ({ style, children, className, open, paddingleft }: Props) => {
+const SlideOpen = ({ style, children, className, open, paddingleft, item }: Props) => {
+  const {
+    name
+  } = item;
   return <SlideContainer paddingleft={paddingleft} open={open}>
       <SlideBody>
-        <span>fwef fewq</span>
+        <TextSlideOpen>{name}</TextSlideOpen>
       </SlideBody>
   </SlideContainer>
 };

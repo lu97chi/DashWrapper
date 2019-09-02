@@ -6,6 +6,7 @@ import { AnimatedCol } from '../../styledComponents';
 import { useLayout } from '../../hooks';
 import Sidebar from '../Sidebar';
 import Header from '../Header';
+import Logo from '../../../../resources/images/logo.jpg';
 
 
 type Props = { 
@@ -18,15 +19,18 @@ type Props = {
    sidebarData: Object 
   };
 
-const Dash = ({ style, children, className, headerData, header, sidebar, sidebarData }: Props) => {
+const Dash = ({ style, children, className, headerData, header, sidebar, sidebarData, theme }: Props) => {
   const { openSidebar, setOpenSidebar } = useLayout();
   return <div style={{ height: '100%'}}>
   <Row style={{height: '100%'}}>
-    {sidebar ? <AnimatedCol sm={openSidebar ? 5 : 2} style={{height: '100%'}}>
-      <Sidebar open={openSidebar} menu={sidebarData} />
+    {sidebar ? <AnimatedCol sm={openSidebar ? 4 : 2} style={{height: '100%'}}>
+      <Sidebar 
+      logo={Logo}
+      open={openSidebar} 
+      menu={sidebarData} />
     </AnimatedCol> : null}
-    {header ? <AnimatedCol sm={openSidebar ? 19 : 22}>
-      <Header 
+    {header ? <AnimatedCol sm={openSidebar ? 20 : 22}>
+      <Header
       {...headerData}
       open={openSidebar} 
       setOpenSidebar={() => setOpenSidebar(!openSidebar)} />

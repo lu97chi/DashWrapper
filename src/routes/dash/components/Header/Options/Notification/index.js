@@ -17,9 +17,10 @@ const Notification = ({ style, children, className, option, handleClick }: Props
         badgeOffset
     } = option;
   const [ notificationState, setNotificationState ] = useState(notifications);
+  const { badgeColor } = option;
   return <Dropdown trigger={['click']} overlay={<Menu>{makeNotificationData(notificationData)}</Menu>}>
       <MenuItem onClick={() => handleClick(option)}>
-      <Badge count={notificationState} offset={badgeOffset}>
+      <Badge count={notificationState} offset={badgeOffset} style={{background: badgeColor}}>
         <IconCustom iconSize={iconSize} iconColor={iconColor} type={icon} />
           </Badge>
       </MenuItem>

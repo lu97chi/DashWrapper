@@ -87,35 +87,35 @@ export const SidebarData = [
         iconSize: '18px',
         fontSize: '18px'
     },
-    {
-        name: 'Usuario',
-        route: 'usuario',
-        icon: 'user',
-        iconSize: '18px',
-        fontSize: '18px',
-        nested: [
-            {
-                name: 'Algun nombre',
-                icon: 'search',
-                route: '/ruta2'
-            },
-            {
-                name: 'Algun nombre',
-                icon: 'search',
-                route: '/ruta2'
-            },
-            {
-                name: 'Algun nombre',
-                icon: 'search',
-                route: '/ruta2'
-            },
-            {
-                name: 'Algun nombre',
-                icon: 'search',
-                route: '/ruta2'
-            }
-        ]
-    },
+    // {
+    //     name: 'Usuario',
+    //     route: 'usuario',
+    //     icon: 'user',
+    //     iconSize: '18px',
+    //     fontSize: '18px',
+    //     nested: [
+    //         {
+    //             name: 'Algun nombre',
+    //             icon: 'search',
+    //             route: '/ruta2'
+    //         },
+    //         {
+    //             name: 'Algun nombre',
+    //             icon: 'search',
+    //             route: '/ruta2'
+    //         },
+    //         {
+    //             name: 'Algun nombre',
+    //             icon: 'search',
+    //             route: '/ruta2'
+    //         },
+    //         {
+    //             name: 'Algun nombre',
+    //             icon: 'search',
+    //             route: '/ruta2'
+    //         }
+    //     ]
+    // },
     {
         name: 'Estadisticas',
         route: 'estadisticas',
@@ -129,17 +129,24 @@ export const SidebarData = [
                 route: '/ruta2'
             },
             {
-                name: 'Algun nombre',
+                name: 'Algun nombre2',
+                icon: 'search',
+                route: '/ruta2',
+                nested: [
+                    {
+                        name: 'Algun nombre3',
+                        icon: 'search',
+                        route: '/ruta2'
+                    }, 
+                ]
+            },
+            {
+                name: 'Algun nombre4',
                 icon: 'search',
                 route: '/ruta2'
             },
             {
-                name: 'Algun nombre',
-                icon: 'search',
-                route: '/ruta2'
-            },
-            {
-                name: 'Algun nombre',
+                name: 'Algun nombre5',
                 icon: 'search',
                 route: '/ruta2'
             }

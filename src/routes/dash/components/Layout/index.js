@@ -7,6 +7,7 @@ import { useLayout } from '../../hooks';
 import Sidebar from '../Sidebar';
 import Header from '../Header';
 import Logo from '../../../../resources/images/logo.jpg';
+import SidebarV2 from '../SidebarV2';
 
 
 type Props = { 
@@ -28,8 +29,9 @@ const Dash = ({ style, children, className, headerData, header, sidebar, sidebar
       logo={Logo}
       open={openSidebar} 
       menu={sidebarData} />
+      {/* <SidebarV2 open={openSidebar} /> */}
     </AnimatedCol> : null}
-    {header ? <AnimatedCol sm={openSidebar ? 20 : 22}>
+    {header ? <AnimatedCol sm={openSidebar ? 19 : 22}>
       <Header
       {...headerData}
       open={openSidebar} 

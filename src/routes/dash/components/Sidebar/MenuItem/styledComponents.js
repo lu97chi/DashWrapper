@@ -8,7 +8,6 @@ export const MenuItemContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: red;
     width: 100%;
     color: ${textColorLight}
     cursor: pointer;
@@ -23,7 +22,7 @@ export const TextContainer = styled.div`
     margin-bottom: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: ${({open}) => open ? 'flex-start' : 'center'};
 `;
 
 

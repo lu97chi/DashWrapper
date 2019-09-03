@@ -3,6 +3,7 @@ import React from 'react';
 import ToolTip from './Tooltip';
 import Notification from './Notification';
 import Searcher from './Searcher';
+import Profile from './Profile';
 // import { OptionsType } from '../../types';
 export const getOption = (option, globalHandler) => {
     switch (option.type) {
@@ -19,6 +20,8 @@ export const getOption = (option, globalHandler) => {
                 option={option} 
                 handleClick={(option) => globalHandler(option)}
             />;
+        case 'profile':
+            return <Profile option={option} />
         default:
             return <ToolTip 
             handleClick={(option) => globalHandler(option)} 

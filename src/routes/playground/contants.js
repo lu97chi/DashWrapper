@@ -22,7 +22,6 @@ export const Theme = {
 }
 
 export const HeaderData = {
-    userName: 'Luis Hernandez',
     options: [
         {
             type: 'searcher',
@@ -69,12 +68,30 @@ export const HeaderData = {
             iconColor: Theme.textColor,
         },
         {
-            type: 'tooltip',
-            icon: 'user',
-            text: 'Perfil',
-            col: 2,
+            type: 'profile',
+            icon: 'default',
+            text: 'Luis hernandez',
+            col: 4,
             iconSize: '18px',
             iconColor: Theme.textColor,
+            nested: [
+                {
+                    text: 'Perfil',
+                    route: '/profile',
+                    icon: 'profile'
+                },
+                {
+                    text: 'Salir',
+                    route: '/logout',
+                    divider: true,
+                    icon: 'search'
+                },
+                {
+                    text: 'Salir2',
+                    route: '/logout',
+                    icon: 'profile'
+                }
+            ]
         },
     ]
 }
@@ -87,35 +104,35 @@ export const SidebarData = [
         iconSize: '18px',
         fontSize: '18px'
     },
-    // {
-    //     name: 'Usuario',
-    //     route: 'usuario',
-    //     icon: 'user',
-    //     iconSize: '18px',
-    //     fontSize: '18px',
-    //     nested: [
-    //         {
-    //             name: 'Algun nombre',
-    //             icon: 'search',
-    //             route: '/ruta2'
-    //         },
-    //         {
-    //             name: 'Algun nombre',
-    //             icon: 'search',
-    //             route: '/ruta2'
-    //         },
-    //         {
-    //             name: 'Algun nombre',
-    //             icon: 'search',
-    //             route: '/ruta2'
-    //         },
-    //         {
-    //             name: 'Algun nombre',
-    //             icon: 'search',
-    //             route: '/ruta2'
-    //         }
-    //     ]
-    // },
+    {
+        name: 'Usuario',
+        route: 'usuario',
+        icon: 'search',
+        iconSize: '18px',
+        fontSize: '18px',
+        nested: [
+            {
+                name: 'Algun nombre425',
+                icon: 'user',
+                route: '/ruta2'
+            },
+            {
+                name: 'Algun nombre523',
+                icon: 'search',
+                route: '/ruta2'
+            },
+            {
+                name: 'Algun nombre1234',
+                icon: 'search',
+                route: '/ruta2'
+            },
+            {
+                name: 'Algun nombre4234',
+                icon: 'search',
+                route: '/ruta2'
+            }
+        ]
+    },
     {
         name: 'Estadisticas',
         route: 'estadisticas',
@@ -134,9 +151,28 @@ export const SidebarData = [
                 route: '/ruta2',
                 nested: [
                     {
+                        name: 'Algun nombr31e3',
+                        icon: 'search',
+                        route: '/ruta2',
+                        nested: [
+                            {
+                                name: 'Algun nomb31re45',
+                                icon: 'search',
+                                route: '/ruta2'
+                            },
+                        ]
+                    },
+                    {
                         name: 'Algun nombre3',
                         icon: 'search',
-                        route: '/ruta2'
+                        route: '/ruta2',
+                        nested: [
+                            {
+                                name: 'Algun nombre45',
+                                icon: 'search',
+                                route: '/ruta2'
+                            },
+                        ]
                     }, 
                 ]
             },

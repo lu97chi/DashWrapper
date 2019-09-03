@@ -20,9 +20,11 @@ export const Router = createRouter(
         component: Test
     },
     {
-      path: `${parentRoute}/test2`,
-      component: Test2
+        path: `${parentRoute}/test2`,
+        component: Test2
     }
   ],
-  {},
+  {default: {
+    redirect: `${parentRoute}/test`
+  }},
 );

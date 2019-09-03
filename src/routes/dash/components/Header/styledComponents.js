@@ -34,3 +34,14 @@ export const IconCustom = styled(Icon)`
     color: ${({iconColor}) => iconColor} !important;
     margin: auto;
 `;
+
+export const Badge = styled.div`
+    padding: 0px 8px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background: ${({badgeColor}) => badgeColor};
+    border-radius: 10px;
+    color: #ffffff;
+    transition: .3s ease all;
+`;

@@ -18,4 +18,5 @@ export const LogoImage = styled.img`
 export const LogoText = styled.span`
     color: #ffffff;
     font-size: 18px;
+    white-space: nowrap;
 `;

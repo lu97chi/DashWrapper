@@ -1,13 +1,41 @@
-//@flow
+// @flow
 import React from 'react';
-import CardInfo from '../../components/CardInfo';
+import { Typography } from 'antd';
+import GenericForm from './GenericForm';
+import { InformationContainer } from './styledComponents';
+import { formConfiguration } from './constants';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string };
+const { Title } = Typography;
 
-const Information = ({ style, children, className }: Props) => {
-  return <div>
-    <CardInfo />
-  </div>
+type Props = { activeElement: string, sections: Array<string> };
+
+const getElemet = (sections, active) => {
+  const whichElement = sections.indexOf(active.slice(5));
+  switch (whichElement) {
+    case 0:
+      return (
+        <GenericForm
+          formConfig={formConfiguration}
+        />
+      );
+    case 1:
+      return <p>2</p>;
+    case 2:
+      return <p>3</p>;
+    default:
+      return <p>default</p>;
+  }
 };
+
+const Information = ({ activeElement, sections }: Props) => (
+  <InformationContainer>
+    <Title level={4}>
+      {activeElement.slice(5)}
+    </Title>
+    {
+      getElemet(sections, activeElement)
+    }
+  </InformationContainer>
+);
 
 export default Information;

@@ -1,25 +1,29 @@
-//@flow
-import React from 'react';
+// @flow
+import React, { useState } from 'react';
 import { component } from 'rrsx';
 import { Row, Col } from 'antd';
 import Information from './containers/Information';
 import Sections from './containers/Sections';
-import { Theme } from '../../../playground/contants';
+import { PerfilContainer } from './styledComponents';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string };
+type Props = { children: any, className: string };
 
-const Profile = ({ style, children, className }: Props) => {
-  const { boxshadowBase } = Theme;
-  return <Row style={{background: '#ffffff', boxShadow: boxshadowBase}}>
-    <Col sm={10}>
-      <Sections />
-    </Col>
-    <Col sm={14}>
-    <Information />
-      
-    </Col>
-  </Row>
+const sections = ['General', 'No general', 'Otra cosa'];
 
+const Profile = () => {
+  const [activeElement, seTactiveElement] = useState(`item-${sections[0]}`);
+  return (
+    <PerfilContainer>
+      <Row>
+        <Col sm={4}>
+          <Sections handleClick={({ key }) => seTactiveElement(key)} sections={sections} />
+        </Col>
+        <Col sm={20}>
+          <Information activeElement={activeElement} sections={sections} />
+        </Col>
+      </Row>
+    </PerfilContainer>
+  );
 };
 
 export default component<Props>(Profile);

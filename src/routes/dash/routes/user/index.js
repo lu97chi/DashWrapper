@@ -1,11 +1,9 @@
-//@flow
+// @flow
 import React from 'react';
 import { component } from 'rrsx';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string };
+type Props = {className: string };
 
-const User = ({ style, children, className }: Props) => {
-  return <div className={className} style={style}> user works {children} </div>;
-};
+const User = ({ className }: Props) => <div className={className}> user works </div>;
 
 export default component<Props>(User);

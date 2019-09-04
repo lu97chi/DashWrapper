@@ -4,7 +4,7 @@ import React from 'react';
 import { component } from 'rrsx';
 import { Form, Input } from 'antd';
 
-type Props = { data:Array<any>, formConfig:any, getFieldDecorator: Function };
+// type Props = { data:Array<any>, formConfig:any, getFieldDecorator: Function };
 
 const injectRules = (validations) => validations.map(({ type, validation, errorMessage }) => (
   { [type]: validation, message: errorMessage }));
@@ -32,4 +32,4 @@ const BasicProfile = ({ formConfig, form }) => {
 };
 
 
-export default Form.create()(component<Props>(BasicProfile));
+export default Form.create()(component(BasicProfile));

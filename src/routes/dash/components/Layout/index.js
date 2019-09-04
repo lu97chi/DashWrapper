@@ -1,13 +1,12 @@
 //@flow
 import React from 'react';
 import { component } from 'rrsx';
-import { Row } from 'antd';
+import { Row, Col } from 'antd';
 import { AnimatedCol } from '../../styledComponents';
 import { useLayout } from '../../hooks';
 import Sidebar from '../Sidebar';
 import Header from '../Header';
 import Logo from '../../../../resources/images/logo.jpg';
-
 
 type Props = { 
   children: any, 
@@ -21,9 +20,9 @@ type Props = {
 
 const Dash = ({ style, children, className, headerData, header, sidebar, sidebarData, theme }: Props) => {
   const { openSidebar, setOpenSidebar } = useLayout();
-  return <div style={{ height: '100%'}}>
+  return <div style={{ height: '100%', background: '#F0F2F5'}}>
   <Row style={{height: '100%'}}>
-    {sidebar ? <AnimatedCol sm={openSidebar ? 4 : 2} style={{height: '100%'}}>
+    {sidebar ? <AnimatedCol sm={openSidebar ? 4 : 2} style={{height: '100%', boxShadow:'red' }}>
       <Sidebar 
       logo={Logo}
       open={openSidebar} 
@@ -35,8 +34,12 @@ const Dash = ({ style, children, className, headerData, header, sidebar, sidebar
       {...headerData}
       open={openSidebar} 
       setOpenSidebar={() => setOpenSidebar(!openSidebar)} />
+      <Row style={{ padding: '24px'}}>
+        <Col sm={24}>
+          {children}
+        </Col>
+      </Row>
     </AnimatedCol> : null}
-    {children}
   </Row>
 </div>;
 };

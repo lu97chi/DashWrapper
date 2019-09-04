@@ -3,7 +3,7 @@ import { Icon } from 'antd';
 import { Theme } from '../../../playground/contants';
 
 const fullHeight = '64px';
-const { borderColorBase,  } = Theme;
+const { borderColorBase, boxshadowBase } = Theme;
 
 export const IconA = styled(Icon)`
     font-size: 24px;
@@ -25,8 +25,9 @@ export const MenuItem = styled.div`
 `;
 
 export const Card = styled.div`
-    border-bottom: 1px solid ${borderColorBase};
     height: ${fullHeight};
+    background: #ffffff;
+    box-shadow: ${boxshadowBase};
 `;
 
 export const IconCustom = styled(Icon)`

@@ -99,14 +99,13 @@ export const HeaderData = {
 export const SidebarData = [
     {
         name: 'Perfil',
-        route: 'perfil',
+        route: 'perfil2',
         icon: 'user',
         iconSize: '18px',
         fontSize: '18px'
     },
     {
         name: 'Usuario',
-        route: 'usuario',
         icon: 'search',
         iconSize: '18px',
         fontSize: '18px',
@@ -114,23 +113,8 @@ export const SidebarData = [
             {
                 name: 'Algun nombre425',
                 icon: 'user',
-                route: '/ruta2'
+                route: 'perfil'
             },
-            {
-                name: 'Algun nombre523',
-                icon: 'search',
-                route: '/ruta2'
-            },
-            {
-                name: 'Algun nombre1234',
-                icon: 'search',
-                route: '/ruta2'
-            },
-            {
-                name: 'Algun nombre4234',
-                icon: 'search',
-                route: '/ruta2'
-            }
         ]
     },
     {
@@ -141,24 +125,22 @@ export const SidebarData = [
         fontSize: '18px',
         nested: [
             {
-                name: 'Algun nombre',
+                name: 'Globales',
                 icon: 'search',
-                route: '/ruta2'
+                route: 'estadisticas/global'
             },
             {
-                name: 'Algun nombre2',
+                name: 'Por departamento',
                 icon: 'search',
-                route: '/ruta2',
                 nested: [
                     {
-                        name: 'Algun nombr31e3',
+                        name: 'Cafe',
                         icon: 'search',
-                        route: '/ruta2',
                         nested: [
                             {
-                                name: 'Algun nomb31re45',
+                                name: 'Organico',
                                 icon: 'search',
-                                route: '/ruta2'
+                                route: 'departamento/cafe/organico'
                             },
                         ]
                     },

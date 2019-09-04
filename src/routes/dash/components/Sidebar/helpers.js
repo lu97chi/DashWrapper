@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigator } from 'rrsx';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { Icon, Menu } from 'antd';
 export const getMenuItem = (item) => {
@@ -12,7 +13,7 @@ export const getMenuItem = (item) => {
         {mapItems(item)}
       </SubMenu>
     }
-    return <Menu.Item>
+    return <Menu.Item onClick={() => navigator.push(item.route)}>
        <Icon type={icon} />
       <span>{name}</span>
     </Menu.Item>
@@ -27,7 +28,7 @@ export const getMenuItem = (item) => {
         {item.nested.map((innerItem) => mapItems(innerItem))}
       </SubMenu>
     }
-    return <Menu.Item key={name}>
+    return <Menu.Item key={name} onClick={() => navigator.push(item.route)}>
         <p>{name}</p>
       </Menu.Item>
   }

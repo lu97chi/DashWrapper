@@ -2,7 +2,7 @@
 import React from 'react';
 import { component } from 'rrsx';
 import { Row, Col } from 'antd';
-import { AnimatedCol } from '../../styledComponents';
+import { AnimatedCol, Section, AnimatedSidebar, RowContianer } from '../../styledComponents';
 import { useLayout } from '../../hooks';
 import Sidebar from '../Sidebar';
 import Header from '../Header';
@@ -18,21 +18,21 @@ type Props = {
   };
 
 const Dash = ({
- children, headerData, header, sidebar, sidebarData 
+  children, headerData, header, sidebar, sidebarData,
 }: Props) => {
   const { openSidebar, setOpenSidebar } = useLayout();
   return (
     <div style={{ height: '100%', background: '#F0F2F5' }}>
-      <Row style={{ height: '100%' }}>
+      <RowContianer style={{ height: '100%' }}>
         {sidebar ? (
-          <AnimatedCol sm={openSidebar ? 4 : 2} style={{ height: '100%', boxShadow: 'red' }}>
+          <AnimatedSidebar open={openSidebar}>
             <Sidebar
               logo={Logo}
               open={openSidebar}
               menu={sidebarData}
             />
             {/* <SidebarV2 open={openSidebar} /> */}
-          </AnimatedCol>
+          </AnimatedSidebar>
         ) : null}
         {header ? (
           <AnimatedCol sm={openSidebar ? 20 : 22}>
@@ -41,14 +41,16 @@ const Dash = ({
               open={openSidebar}
               setOpenSidebar={() => setOpenSidebar(!openSidebar)}
             />
-            <Row style={{ padding: '24px' }}>
-              <Col sm={24}>
-                {children}
-              </Col>
+            <Row style={{ maxHeight: '90%', overflowY: 'auto', padding: '24px' }}>
+              <AnimatedCol sm={24} style={{ zIndex: 2 }}>
+                <Section>
+                  {children}
+                </Section>
+              </AnimatedCol>
             </Row>
           </AnimatedCol>
         ) : null}
-      </Row>
+      </RowContianer>
     </div>
   );
 };

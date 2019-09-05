@@ -1,6 +1,6 @@
-//@flow
-import { observable, action, computed } from 'mobx';
-import { service, navigator, inject } from 'rrsx';
+// @flow
+import { observable, action } from 'mobx';
+import { service } from 'rrsx';
 
 export type Item = {
   name: string,
@@ -16,7 +16,9 @@ class TodoService {
   @observable list: Array<Item> = [{ name: 'Hola mundo' }];
 
   @observable text: string = '';
+
   init = () => {};
+
   @action add(item: Item) {
     this.list.push(item);
   }

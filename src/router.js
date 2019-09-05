@@ -4,7 +4,6 @@ import { createRouter } from 'rrsx';
 import SignUp from './routes/sign-up';
 import Main from './routes/main';
 import Dash from './routes/dash';
-import Playground from './routes/playground';
 /* path: '/auth/:id',
   Component: Component,
   disableLayout: [SideBar, TopBar],

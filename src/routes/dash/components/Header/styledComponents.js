@@ -8,7 +8,7 @@ const { borderColorBase, boxshadowBase } = Theme;
 export const IconA = styled(Icon)`
     font-size: 24px;
     transition: .3s ease all;
-    transform: ${({open}) => open ? 'rotate(0deg)' : 'rotate(180deg)'};
+    transform: ${({ open }) => (open ? 'rotate(0deg)' : 'rotate(180deg)')};
 `;
 
 export const MenuItem = styled.div`
@@ -28,11 +28,12 @@ export const Card = styled.div`
     height: ${fullHeight};
     background: #ffffff;
     box-shadow: ${boxshadowBase};
+    z-index: 5;
 `;
 
 export const IconCustom = styled(Icon)`
-    font-size: ${({iconSize}) => iconSize} !important;
-    color: ${({iconColor}) => iconColor} !important;
+    font-size: ${({ iconSize }) => iconSize} !important;
+    color: ${({ iconColor }) => iconColor} !important;
     margin: auto;
 `;
 
@@ -41,7 +42,7 @@ export const Badge = styled.div`
     position: absolute;
     top: 10%;
     right: 10%;
-    background: ${({badgeColor}) => badgeColor};
+    background: ${({ badgeColor }) => badgeColor};
     border-radius: 10px;
     color: #ffffff;
     transition: .3s ease all;

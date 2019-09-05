@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
-import { Router as MainRouter } from './router';
+import React from 'react';
 import { Router } from 'react-router-dom';
 import { navigator } from 'rrsx';
+import { Router as MainRouter } from './router';
 
-class App extends Component {
-  render() {
-    return (
-      <Router history={navigator}>
-        <MainRouter />
-      </Router>
-    );
-  }
-}
+
+const App = () => (
+  <Router history={navigator}>
+    <MainRouter />
+  </Router>
+);
 
 export default App;

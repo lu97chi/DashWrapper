@@ -63,7 +63,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "flow": "flow",
-    "lint": "./node_modules/.bin/eslint --init"
+    "lint": "./node_modules/.bin/eslint --init",
+    "format": "prettier-eslint '**/*.{js,json}' --write"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -152,6 +153,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "flow-bin": "^0.93.0"
+    "flow-bin": "^0.93.0",
+    "prettier-eslint": "^9.0.0"
   }
 }

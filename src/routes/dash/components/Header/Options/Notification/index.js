@@ -8,7 +8,7 @@ import { makeNotificationData } from './helpers';
 type Props = { children: any, style: CSSStyleDeclaration, className: string };
 
 const Notification = ({
-  style, children, className, option, handleClick,
+  option, handleClick,
 }: Props) => {
   const {
     icon,

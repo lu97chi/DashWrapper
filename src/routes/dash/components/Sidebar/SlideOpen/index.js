@@ -1,19 +1,21 @@
-//@flow
+// @flow
 import React from 'react';
 import { component } from 'rrsx';
 import { SlideContainer, SlideBody, TextSlideOpen } from './styledComponents';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string, item: Object };
+type Props = { item: Object, open: Boolean, paddingleft: String };
 
-const SlideOpen = ({ style, children, className, open, paddingleft, item }: Props) => {
+const SlideOpen = ({ open, paddingleft, item }: Props) => {
   const {
-    name
+    name,
   } = item;
-  return <SlideContainer paddingleft={paddingleft} open={open}>
+  return (
+    <SlideContainer paddingleft={paddingleft} open={open}>
       <SlideBody>
         <TextSlideOpen>{name}</TextSlideOpen>
       </SlideBody>
-  </SlideContainer>
+    </SlideContainer>
+  );
 };
 
 export default component<Props>(SlideOpen);

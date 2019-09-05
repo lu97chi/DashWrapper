@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Theme } from '../../../playground/contants';
+
 const { primaryBackgroundColor, boxshadowBase } = Theme;
 
 export const SidebarContainer = styled.div`

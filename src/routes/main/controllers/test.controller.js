@@ -1,10 +1,11 @@
-//@flow
-import { observable, action, computed } from 'mobx';
-import { service, navigator, inject } from 'rrsx';
+// @flow
+import { observable, action } from 'mobx';
+import { service } from 'rrsx';
 
 @service({})
 class serviceName {
   @observable isComponentVisible = true;
+
   @action showComponent() {
     this.isComponentVisible = !this.isComponentVisible;
   }

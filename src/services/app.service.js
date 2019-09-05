@@ -1,4 +1,4 @@
-//@flow
+// @flow
 import { observable, action, computed } from 'mobx';
 import { service, navigator, inject } from 'rrsx';
 
@@ -18,6 +18,6 @@ class serviceName {
 
   @computed
   get computedProp() {
-    return;
+
   }
 }

@@ -2,7 +2,8 @@ export const formConfiguration = [
   {
     label: 'Email',
     placeHolder: 'lu97is@gmail.com',
-    defaultValue: '',
+    initialValue: '',
+    cols: 6,
     required: true,
     type: 'string',
     extraValidations: [
@@ -16,7 +17,8 @@ export const formConfiguration = [
   {
     label: 'Email2',
     placeHolder: 'lu97is@gmail.com',
-    defaultValue: '',
+    initialValue: '',
+    cols: 6,
     required: true,
     type: 'string',
     extraValidations: [
@@ -28,9 +30,25 @@ export const formConfiguration = [
     ],
   },
   {
+    label: 'Contraseña2',
+    placeHolder: '',
+    initialValue: '',
+    cols: 6,
+    required: true,
+    type: 'password',
+    extraValidations: [
+      {
+        type: 'min',
+        validation: 5,
+        errorMessage: 'Muy corta',
+      },
+    ],
+  },
+  {
     label: 'Email3',
     placeHolder: 'lu97is@gmail.com',
-    defaultValue: '',
+    initialValue: '',
+    cols: 6,
     required: true,
     type: 'string',
     extraValidations: [
@@ -54,7 +72,8 @@ export const formConfiguration = [
   {
     label: 'Custom',
     placeHolder: '',
-    defaultValue: 12,
+    initialValue: 12,
+    cols: 19,
     required: false,
     type: 'number',
     extraValidations: [
@@ -67,5 +86,37 @@ export const formConfiguration = [
         },
       },
     ],
+  },
+  {
+    label: 'Month',
+    placeHolder: '',
+    initialValue: '',
+    cols: 6,
+    required: true,
+    type: 'month',
+  },
+  {
+    label: 'Date Pikcer',
+    placeHolder: '',
+    initialValue: '',
+    cols: 6,
+    required: true,
+    type: 'date',
+  },
+  {
+    label: 'Range Picker',
+    placeHolder: '',
+    initialValue: '',
+    cols: 6,
+    required: true,
+    type: 'range',
+  },
+  {
+    label: 'Time Picker',
+    place: '',
+    initialValue: '',
+    cols: 6,
+    required: false,
+    type: 'time',
   },
 ];

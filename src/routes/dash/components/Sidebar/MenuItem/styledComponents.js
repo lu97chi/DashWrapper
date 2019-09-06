@@ -22,15 +22,15 @@ export const TextContainer = styled.div`
     margin-bottom: 12px;
     display: flex;
     align-items: center;
-    justify-content: ${({open}) => open ? 'flex-start' : 'center'};
+    justify-content: ${({ open }) => (open ? 'flex-start' : 'center')};
 `;
 
 
 export const IconA = styled(Icon)`
     transition: .3s ease all;
-    opacity: ${({open}) => open ? 1 : 0};
-    visibility: ${({open}) => open ? 'block' : 'hidden'};
-    transform: ${({nestedOpen}) => nestedOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+    opacity: ${({ open }) => (open ? 1 : 0)};
+    visibility: ${({ open }) => (open ? 'block' : 'hidden')};
+    transform: ${({ nestedOpen }) => (nestedOpen ? 'rotate(180deg)' : 'rotate(0deg)')};
     padding-right: 12px;
     padding-left: 12px;
 `;
@@ -38,13 +38,13 @@ export const IconA = styled(Icon)`
 
 export const AText = styled.span`
     transition: .3s ease all;
-    opacity: ${({open}) => open ? 1 : 0};
+    opacity: ${({ open }) => (open ? 1 : 0)};
     margin-left: 12px;
-    font-size: ${({fontsize}) => fontsize};
+    font-size: ${({ fontsize }) => fontsize};
 `;
 
 
 export const NestedContainer = styled.div`
-    border-top: ${({open}) => open ? `1px solid ${borderColorBase}` : `0px solid ${borderColorBase}`} ;
-    border-bottom: ${({open}) => open ? `1px solid ${borderColorBase}` : `0px solid ${borderColorBase}`};
+    border-top: ${({ open }) => (open ? `1px solid ${borderColorBase}` : `0px solid ${borderColorBase}`)} ;
+    border-bottom: ${({ open }) => (open ? `1px solid ${borderColorBase}` : `0px solid ${borderColorBase}`)};
 `;

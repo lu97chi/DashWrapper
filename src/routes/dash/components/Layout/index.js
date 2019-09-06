@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import { component } from 'rrsx';
-import { Row, Col } from 'antd';
-import { AnimatedCol, Section, AnimatedSidebar, RowContianer } from '../../styledComponents';
+import { Row } from 'antd';
+import { AnimatedCol, Section } from '../../styledComponents';
 import { useLayout } from '../../hooks';
 import Sidebar from '../Sidebar';
 import Header from '../Header';
@@ -23,16 +23,15 @@ const Dash = ({
   const { openSidebar, setOpenSidebar } = useLayout();
   return (
     <div style={{ height: '100%', background: '#F0F2F5' }}>
-      <RowContianer style={{ height: '100%' }}>
+      <Row style={{ height: '100%' }}>
         {sidebar ? (
-          <AnimatedSidebar open={openSidebar}>
+          <AnimatedCol sm={openSidebar ? 4 : 2}>
             <Sidebar
               logo={Logo}
               open={openSidebar}
               menu={sidebarData}
             />
-            {/* <SidebarV2 open={openSidebar} /> */}
-          </AnimatedSidebar>
+          </AnimatedCol>
         ) : null}
         {header ? (
           <AnimatedCol sm={openSidebar ? 20 : 22}>
@@ -50,7 +49,7 @@ const Dash = ({
             </Row>
           </AnimatedCol>
         ) : null}
-      </RowContianer>
+      </Row>
     </div>
   );
 };

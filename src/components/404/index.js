@@ -1,8 +1,10 @@
-//@flow
+// @flow
 import React from 'react';
-import { Container, MainText, Line, Back } from './StyledComponents';
-import { NOT_FOUND } from './const';
 import { component } from 'rrsx';
+import {
+  Container, MainText, Line, Back,
+} from './StyledComponents';
+import { NOT_FOUND } from './const';
 import { TranslateUp, TranslateDown, ScaleX } from '../animations';
 
 function Page404() {
@@ -19,7 +21,7 @@ function Page404() {
         <Line />
       </ScaleX>
 
-      <MainText writeLine={true}>
+      <MainText writeLine>
         <TranslateDown delay={0.6} time={0.5}>
           {404}
         </TranslateDown>

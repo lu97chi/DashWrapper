@@ -1,4 +1,3 @@
-import React from 'react';
 import { useObservable } from 'mobx-react-lite';
 
 function TodoHook() {

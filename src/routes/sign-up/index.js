@@ -7,13 +7,11 @@ import Title from './containers/title';
 
 type Props = { children: React.Component, style: CSSProperties };
 
-const SignUp = ({ style, children }: Props) => {
-  return (
-    <Container>
-      <Title />
-      <FormCard />
-    </Container>
-  );
-};
+const SignUp = ({ style, children }: Props) => (
+  <Container>
+    <Title />
+    <FormCard />
+  </Container>
+);
 
 export default component<Props>(SignUp);

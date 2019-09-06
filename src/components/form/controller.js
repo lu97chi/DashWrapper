@@ -1,4 +1,4 @@
-//@flow
+// @flow
 import React, { CSSProperties } from 'react';
 import { observable, action, computed } from 'mobx';
 import { Config } from './types';

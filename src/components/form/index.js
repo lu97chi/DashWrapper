@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import FormController from './controller';
+
 type Props = {
   controller: FormController,
 };

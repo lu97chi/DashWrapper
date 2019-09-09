@@ -79,28 +79,33 @@ const formGenerator = (fielDecorator, elements) => {
   return payload;
 };
 
-const handleSave = (form) => {
+const handleSave = (form, handler) => {
   form.validateFields((err, values) => {
     if (!err) {
-      console.log('values from form', values);
+      handler(values);
     }
   });
 };
 
+const internalHandler = () => console.log('internal');
+
 const GForm = ({
-  formConfig, form, externalHandler, showHandler = true, handleFromOutside, externalRef,
+  formConfig, form, externalHandler, showHandler = true, handleFromOutside = false,
 }) => {
   const { getFieldDecorator } = form;
-  // useEffect(() => {
-  //   externalHandler(form);
-  // }, [handleFromOutside]);
+  useEffect(() => {
+    if (handleFromOutside) {
+      handleSave(form, externalHandler);
+    }
+  }, [handleFromOutside]);
+
   return (
-    <Form ref={externalRef}>
+    <Form>
       <Row gutter={32}>
         {formGenerator(getFieldDecorator, formConfig)}
       </Row>
       {
-        showHandler ? <Button onClick={() => handleSave(form)}>Save</Button> : null
+        showHandler ? <Button onClick={() => handleSave(form, internalHandler)}>Save</Button> : null
       }
     </Form>
   );

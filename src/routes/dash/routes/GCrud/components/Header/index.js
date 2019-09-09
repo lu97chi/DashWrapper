@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { component } from 'rrsx';
 import { Typography, Modal, Button } from 'antd';
 import { HeaderContainer, ButtonsContainer } from './styledComponents';
@@ -11,30 +11,28 @@ type Props = { buttons: Object };
 const onOk = (loading, visible, setCallingFromOutside) => {
   loading(true);
   setCallingFromOutside(true); // function caller
-  setTimeout(() => {
-    loading(false);
-    visible(false);
-    setCallingFromOutside(false); // function closer
-  }, 2000);
 };
 
-const retriveData = (formData) => {
-  formData.validateFields((err, values) => {
-    console.log(err, values);
-  });
-  return formData;
+const makeRequest = (values, setters) => {
+  const { setConfirmLoading, setVisible, setCallingFromOutside } = setters;
+  setTimeout(() => {
+    setConfirmLoading(false);
+    setVisible(false);
+    setCallingFromOutside(false);
+  }, 2000);
+  // function caller for form data
+  console.log(values);
 };
 
 const Header = ({ buttons }: Props) => {
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [callingFromOutside, setCallingFromOutside] = useState(false);
-  const formRef = useRef(null);
   return (
     <HeaderContainer>
       <Typography.Title style={{ marginBottom: '0px' }} level={2}>Tiftulo</Typography.Title>
       <ButtonsContainer>
-        {/* {buttons} */}
+        {/* {buttons} accepts components as childres */}
         <Button onClick={() => setVisible(true)}>Crear</Button>
       </ButtonsContainer>
       <Modal
@@ -44,13 +42,17 @@ const Header = ({ buttons }: Props) => {
         confirmLoading={confirmLoading}
         onCancel={() => setVisible(false)}
       >
-        <GForm
-          externalRef={formRef}
-          handleFromOutside={callingFromOutside}
-          formConfig={FormConfiguration}
-          showHandler
-          externalHandler={(data) => retriveData(data)}
-        />
+        {
+          visible ? (
+            <GForm
+              handleFromOutside={callingFromOutside}
+              formConfig={FormConfiguration}
+              showHandler={false}
+              externalHandler={(values) => makeRequest(values,
+                { setConfirmLoading, setVisible, setCallingFromOutside })}
+            />
+          ) : null
+        }
       </Modal>
     </HeaderContainer>
   );

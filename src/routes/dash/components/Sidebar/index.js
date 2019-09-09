@@ -7,13 +7,15 @@ import Logo from './Logo';
 import { getMenuItem } from './helpers';
 import MenuItem from './MenuItem';
 
-type Props = { open: Boolean, logo: string, menu: Array<any> };
+type Props = { open: Boolean, menu: Array<any>, logoConfig: Object };
 
 
-const Sidebar = ({ open, menu, logo }: Props) => (
+const Sidebar = ({
+  open, menu, logoConfig,
+}: Props) => (
   <SidebarContainer open={open}>
-    <Logo logo={logo} open={open} />
-    <Menu theme="dark" inlineCollapsed={!open} mode="vertical">
+    <Logo logo={logoConfig} open={open} />
+    <Menu style={{ width: 'auto' }} theme="dark" inlineCollapsed={!open} mode="vertical">
       { menu.map((menuItem) => (!open ? getMenuItem(menuItem)
         : <MenuItem menu={menuItem} open={open} />))}
     </Menu>

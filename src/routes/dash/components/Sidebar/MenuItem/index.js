@@ -11,6 +11,7 @@ type Props = { open: Boolean, menu: Array<any>};
 
 const showNested = (elements, open, iconSize) => elements.map((item) => (
   <SlideOpen item={item} paddingleft={iconSize} open={open} />));
+
 const showPoper = (open, menu) => {
   const { fontSize, iconSize } = menu;
   return (

@@ -29,6 +29,7 @@ export const getMenuItem = (item) => {
   if (nested) {
     return (
       <SubMenu
+        style={{ marginLeft: 'auto' }}
         key={name}
         title={(
           <span>

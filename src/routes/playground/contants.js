@@ -1,3 +1,4 @@
+import Logo from '../../resources/images/null.png';
 // each propertie is a type
 export const Theme = {
   primaryColor: '#1890ff', // primary color for all components
@@ -96,78 +97,44 @@ export const HeaderData = {
   ],
 };
 
-export const SidebarData = [
-  {
-    name: 'Perfil',
-    route: 'perfil2',
-    icon: 'user',
-    iconSize: '18px',
-    fontSize: '18px',
+export const SidebarData = {
+  logoConfig: {
+    withText: false,
+    logoText: 'Texto',
+    logoImg: Logo,
   },
-  {
-    name: 'Usuario',
-    icon: 'search',
-    iconSize: '18px',
-    fontSize: '18px',
-    nested: [
-      {
-        name: 'Algun nombre425',
-        icon: 'user',
-        route: 'perfil',
-      },
-    ],
-  },
-  {
-    name: 'Estadisticas',
-    route: 'estadisticas',
-    icon: 'user',
-    iconSize: '18px',
-    fontSize: '18px',
-    nested: [
-      {
-        name: 'Globales',
-        icon: 'search',
-        route: 'estadisticas/global',
-      },
-      {
-        name: 'Por departamento',
-        icon: 'search',
-        nested: [
-          {
-            name: 'Cafe',
-            icon: 'search',
-            nested: [
-              {
-                name: 'Organico',
-                icon: 'search',
-                route: 'departamento/cafe/organico',
-              },
-            ],
-          },
-          {
-            name: 'Algun nombre3',
-            icon: 'search',
-            route: '/ruta2',
-            nested: [
-              {
-                name: 'Algun nombre45',
-                icon: 'search',
-                route: '/ruta2',
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: 'Algun nombre4',
-        icon: 'search',
-        route: '/ruta2',
-      },
-      {
-        name: 'Algun nombre5',
-        icon: 'search',
-        route: '/ruta2',
-      },
-    ],
-  },
-];
+  menu: [
+    {
+      name: 'Perfil',
+      route: 'perfil2',
+      icon: 'user',
+      iconSize: '18px',
+      fontSize: '18px',
+    },
+    {
+      name: 'Usuario',
+      icon: 'search',
+      iconSize: '18px',
+      fontSize: '18px',
+      nested: [
+        {
+          name: 'Algun nombre425',
+          icon: 'user',
+          route: 'perfil',
+        },
+        {
+          name: 'Algun nombre4252',
+          icon: 'user',
+          route: 'perfil',
+        },
+      ],
+    },
+    {
+      name: 'CRUD',
+      route: 'GCrud',
+      icon: 'user',
+      iconSize: '18px',
+      fontSize: '18px',
+    },
+  ],
+};

@@ -2,14 +2,13 @@ import styled from 'styled-components';
 import { Icon } from 'antd';
 import { Theme } from '../../../../playground/contants';
 
-const { borderColorBase, textColorLight, textColorLightHover } = Theme;
+const { textColorLight, textColorLightHover } = Theme;
 export const MenuItemContainer = styled.div`
     transition: .3s ease all;
     display: flex;
     align-items: center;
-    justify-content: center;
     width: 100%;
-    color: ${textColorLight}
+    color: ${textColorLight};
     cursor: pointer;
     &:hover {
         color: ${textColorLightHover};
@@ -22,7 +21,7 @@ export const TextContainer = styled.div`
     margin-bottom: 12px;
     display: flex;
     align-items: center;
-    justify-content: ${({ open }) => (open ? 'flex-start' : 'center')};
+    margin-left: 24px;
 `;
 
 
@@ -45,6 +44,6 @@ export const AText = styled.span`
 
 
 export const NestedContainer = styled.div`
-    border-top: ${({ open }) => (open ? `1px solid ${borderColorBase}` : `0px solid ${borderColorBase}`)} ;
-    border-bottom: ${({ open }) => (open ? `1px solid ${borderColorBase}` : `0px solid ${borderColorBase}`)};
+box-shadow: -12px 0px 15px 0px rgba(0,0,0,1);
+
 `;

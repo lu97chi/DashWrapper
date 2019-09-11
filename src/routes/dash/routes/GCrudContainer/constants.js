@@ -7,6 +7,7 @@ export const GCrudConfiguration = {
   elementsPerPage: 5,
   title: 'Productos',
   domain: 'https://reqres.in/api',
+  filterProp: 'age',
 };
 
 
@@ -261,3 +262,60 @@ export const data = [
     address: 'London No. 2 Lake Park',
   },
 ];
+
+
+export const ButtonsData = [
+  {
+    label: 'Crear',
+    endPoint: '/create',
+    type: 'post',
+    buttonType: 'primary',
+    actionCreator: {
+      label: 'Prueba',
+      data: FormConfiguration,
+    },
+    data: {
+      name: 'luchi',
+      job: '123',
+    },
+  },
+];
+
+// export const ButonsData = [
+//   {
+//     label: 'Crear',
+//     endPoint: '/create',
+//     type: 'post',
+//     data: {
+//       name: 'luchi',
+//       job: '123',
+//     },
+//   },
+//   {
+//     label: 'Obtener todos',
+//     endPoint: '/users',
+//     type: 'get',
+//   },
+//   {
+//     label: 'Obtener una',
+//     endPoint: '/user/$$',
+//     type: 'get',
+//     params: [2],
+//   },
+//   {
+//     label: 'MultipleVariables',
+//     endPoint: '/user/$$/otro/$$',
+//     type: 'get',
+//     params: [2, 12],
+//   },
+//   {
+//     label: 'Actualizar',
+//     endPoint: '/users/$$',
+//     type: 'put',
+//     params: [2],
+//     data: {
+//       name: 'luchi2',
+//       job: 'luchi 3',
+//     },
+//   },
+// ];

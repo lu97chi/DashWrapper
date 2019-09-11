@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const GCrudWrapper = styled.div`
     background: #ffffff;
-    padding: 16px;
+    padding: 24px;
     box-shadow: ${({ boxshadow }) => boxshadow} !important;
 `;
 

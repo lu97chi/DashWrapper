@@ -17,13 +17,12 @@ export const ColumnMaker = (standardColumns, caller, endPoint) => {
     const row = {};
     if (type !== 'default') {
       row.render = () => actionMaker(actions, caller, endPoint);
-    } else {
-      row.title = title;
-      row.dataIndex = selector;
     }
     if (sort) {
       row.sorter = (a, b) => a[selector] - b[selector];
     }
+    row.title = title;
+    row.dataIndex = selector;
     columns.push(row);
   });
   return columns;

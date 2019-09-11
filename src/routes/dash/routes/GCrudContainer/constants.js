@@ -1,3 +1,6 @@
+import React from 'react';
+import { Button } from 'antd';
+
 export const GCrudConfiguration = {
   enableFilter: true,
   enablePagination: true,
@@ -110,6 +113,76 @@ export const FormConfiguration = [
   },
 ];
 
+
+export const columnsA = [
+  {
+    title: 'Nombre',
+    selector: 'name',
+    sort: true,
+    type: 'default',
+  },
+  {
+    title: 'Age',
+    selector: 'age',
+    sort: true,
+    type: 'default',
+  },
+  {
+    title: 'Address',
+    selector: 'address',
+    sort: true,
+    type: 'default',
+  },
+  {
+    title: 'Actions',
+    selector: '',
+    type: 'action',
+    actions: [
+      {
+        label: 'Eliminar',
+        endPoint: '/update/$$',
+        type: 'put',
+        params: [2],
+        data: {
+          name: 'luchi2',
+          job: 'luchi 3',
+        },
+      },
+    ],
+  },
+];
+
+
+export const columns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => a.name - b.name,
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => a.age - b.age,
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => a.address - b.address,
+  },
+  {
+    title: 'Action',
+    dataIndex: '',
+    key: 'x',
+    render: () => (
+      <div>
+        <Button>Eliminar</Button>
+      </div>
+    ),
+  },
+];
 
 export const data = [
   {

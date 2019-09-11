@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 // @flow
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { component } from 'rrsx';
 import {
   Form, Input, DatePicker, TimePicker, Row, Col, Button, Rate, Slider,

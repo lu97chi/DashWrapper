@@ -4,8 +4,8 @@ import { createRouter } from 'rrsx';
 import Test from './routes/test';
 import Test2 from './routes/test2';
 import Profile from './routes/perfil';
-import GCrud from './routes/GCrud';
 import User from './routes/user';
+import GCrud from './routes/GCrudContainer';
 /* path: '/auth/:id',
   Component: Component,
   disableLayout: [SideBar, TopBar],

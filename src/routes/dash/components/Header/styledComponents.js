@@ -8,6 +8,7 @@ const { borderColorBase, boxshadowBase } = Theme;
 export const IconA = styled(Icon)`
     font-size: 24px;
     transition: .3s ease all;
+    margin-left: 24px;
     transform: ${({ open }) => (open ? 'rotate(0deg)' : 'rotate(180deg)')};
 `;
 

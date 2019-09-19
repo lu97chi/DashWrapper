@@ -3,7 +3,7 @@
 import { createRouter } from 'rrsx';
 import SignUp from './routes/sign-up';
 import Main from './routes/main';
-import Dash from './routes/dash';
+import DashContainer from './routes/DashContainer';
 /* path: '/auth/:id',
   Component: Component,
   disableLayout: [SideBar, TopBar],
@@ -20,12 +20,8 @@ export const Router = createRouter(
       component: SignUp,
     },
     {
-      path: '/dash',
-      component: Dash,
-    },
-    {
       path: '/playground',
-      component: Dash,
+      component: DashContainer,
     },
     {
       path: '/',

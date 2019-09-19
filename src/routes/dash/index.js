@@ -1,13 +1,13 @@
 // @flow
 import React from 'react';
 import { component } from 'rrsx';
-import { Router } from './router';
 import Layout from './components/Layout';
 import { HeaderData, SidebarData, Theme } from '../playground/contants';
+import { Router } from './router';
 
 type Props = { children: any, className: string };
 
-const DashRouter = () => (
+const DashRouter = ({PropRouter, theme}) => (
   <Layout
     header
     sidebar
@@ -15,7 +15,7 @@ const DashRouter = () => (
     sidebarData={SidebarData}
     theme={Theme}
   >
-    <Router theme={Theme} />
+    <Router theme={theme} />
   </Layout>
 );
 

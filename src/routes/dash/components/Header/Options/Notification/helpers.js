@@ -1,10 +1,25 @@
 import React from 'react';
 import { Menu } from 'antd';
+import { NotificationDataContainer } from './styledComponents';
+import IconText from './IconText';
 
 const getNotificationStyle = (notification) => {
-  switch (notification.type) {
+  const {
+    type, text, delay, icon, isUser, iconBackground,
+  } = notification;
+  switch (type) {
     case 'text':
-      return <p>texto</p>;
+      return (<NotificationDataContainer>{text}</NotificationDataContainer>);
+    case 'iconText':
+      return (
+        <IconText
+          icon={icon}
+          isUser={isUser}
+          delay={delay}
+          text={text}
+          iconBackground={iconBackground}
+        />
+      );
     default:
       return <p>texto</p>;
   }

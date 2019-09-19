@@ -83,6 +83,8 @@ const handleSave = (form, handler) => {
   form.validateFields((err, values) => {
     if (!err) {
       handler(values);
+    } else {
+      handler('Error');
     }
   });
 };

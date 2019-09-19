@@ -1,11 +1,14 @@
 import React from 'react';
 import { Button } from 'antd';
 
-const actionMaker = (actions, caller, endPoint) => actions.map((action) => (
-  <Button onClick={() => caller(action, endPoint)}>
-    {action.label}
-  </Button>
-));
+const actionMaker = (actions, caller, endPoint, row) => actions.map((action) => {
+  const actionObject = Object.assign(action, row);
+  return (
+    <Button onClick={() => caller(actionObject, endPoint)}>
+      {action.label}
+    </Button>
+  );
+});
 
 
 export const ColumnMaker = (standardColumns, caller, endPoint) => {
@@ -16,7 +19,7 @@ export const ColumnMaker = (standardColumns, caller, endPoint) => {
     } = column;
     const row = {};
     if (type !== 'default') {
-      row.render = () => actionMaker(actions, caller, endPoint);
+      row.render = (rowItem) => actionMaker(actions, caller, endPoint, rowItem);
     }
     if (sort) {
       row.sorter = (a, b) => a[selector] - b[selector];

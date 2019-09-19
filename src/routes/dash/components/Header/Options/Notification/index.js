@@ -20,7 +20,7 @@ const Notification = ({
   const [notificationState, setNotificationState] = useState(notifications);
   const { badgeColor } = option;
   return (
-    <Dropdown trigger={['click']} overlay={<Menu>{makeNotificationData(notificationData)}</Menu>}>
+    <Dropdown trigger={['click']} overlay={<Menu style={{ width: '200px' }}>{makeNotificationData(notificationData)}</Menu>}>
       <MenuItem onClick={() => handleClick(option)}>
         <Badge badgeColor={badgeColor}>{notificationState}</Badge>
         <IconCustom iconSize={iconSize} iconColor={iconColor} type={icon} />

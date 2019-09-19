@@ -1,9 +1,13 @@
+import React from 'react';
+import { Button } from 'antd';
+
 export const GCrudConfiguration = {
   enableFilter: true,
   enablePagination: true,
   elementsPerPage: 5,
   title: 'Productos',
   domain: 'https://reqres.in/api',
+  filterProp: 'age',
 };
 
 
@@ -34,7 +38,7 @@ export const FormConfiguration = [
     label: 'Email',
     placeholder: 'lu97is@gmail.com',
     selector: 'email',
-    initialValue: '2342',
+    initialValue: '',
     cols: 6,
     required: true,
     type: 'string',
@@ -49,7 +53,7 @@ export const FormConfiguration = [
   {
     label: 'Emaifdsal2',
     placeholder: 'lu97is@gmail.com',
-    selector: 'email2',
+    selector: 'name',
     initialValue: '',
     cols: 6,
     type: 'string',
@@ -110,6 +114,71 @@ export const FormConfiguration = [
   },
 ];
 
+
+export const columnsA = [
+  {
+    title: 'Nombre',
+    selector: 'name',
+    sort: true,
+    type: 'default',
+  },
+  {
+    title: 'Age',
+    selector: 'age',
+    sort: true,
+    type: 'default',
+  },
+  {
+    title: 'Address',
+    selector: 'address',
+    sort: true,
+    type: 'default',
+  },
+  {
+    title: 'Actions',
+    selector: '',
+    type: 'action',
+    actions: [
+      {
+        label: 'Actualizar',
+        endPoint: '/update/:name$/fdsa/:key$/fda/:age$',
+        type: 'put',
+      },
+    ],
+  },
+];
+
+
+export const columns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => a.name - b.name,
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => a.age - b.age,
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => a.address - b.address,
+  },
+  {
+    title: 'Action',
+    dataIndex: '',
+    key: 'x',
+    render: () => (
+      <div>
+        <Button>Eliminar</Button>
+      </div>
+    ),
+  },
+];
 
 export const data = [
   {
@@ -188,3 +257,79 @@ export const data = [
     address: 'London No. 2 Lake Park',
   },
 ];
+
+
+export const ButtonsData = [
+  {
+    label: 'Crear',
+    endPoint: '/create',
+    type: 'post',
+    buttonType: 'primary',
+    actionCreator: {
+      label: 'Prueba',
+      data: FormConfiguration,
+    },
+  },
+  {
+    label: 'Obtener todos',
+    endPoint: '/users',
+    type: 'get',
+    buttonType: 'danger',
+  },
+  {
+    label: 'Obtener una',
+    endPoint: '/user/$$',
+    type: 'get',
+    params: [2],
+  },
+  {
+    label: 'Crear con parametros',
+    endPoint: '/create/$$/parametro2/$$',
+    type: 'post',
+    buttonType: 'primary',
+    params: [12, 25],
+    actionCreator: {
+      label: 'Prueba',
+      data: FormConfiguration,
+    },
+  },
+];
+
+// export const ButonsData = [
+//   {
+//     label: 'Crear',
+//     endPoint: '/create',
+//     type: 'post',
+//     data: {
+//       name: 'luchi',
+//       job: '123',
+//     },
+//   },
+//   {
+//     label: 'Obtener todos',
+//     endPoint: '/users',
+//     type: 'get',
+//   },
+//   {
+//     label: 'Obtener una',
+//     endPoint: '/user/$$',
+//     type: 'get',
+//     params: [2],
+//   },
+//   {
+//     label: 'MultipleVariables',
+//     endPoint: '/user/$$/otro/$$',
+//     type: 'get',
+//     params: [2, 12],
+//   },
+//   {
+//     label: 'Actualizar',
+//     endPoint: '/users/$$',
+//     type: 'put',
+//     params: [2],
+//     data: {
+//       name: 'luchi2',
+//       job: 'luchi 3',
+//     },
+//   },
+// ];

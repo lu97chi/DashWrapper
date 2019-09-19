@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { component } from 'rrsx';
 import {
-  Button, Input, Row, Col, Table,
+  Input, Row, Col, Table,
 } from 'antd';
 import { GCrudWrapper } from './styledComponents';
 import Header from './components/Header';

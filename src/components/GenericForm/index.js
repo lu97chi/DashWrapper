@@ -11,8 +11,6 @@ import {
 
 const { MonthPicker, RangePicker } = DatePicker;
 
-// type Props = { data:Array<any>, formConfig:any, getFieldDecorator: Function };
-
 const injectRules = (validations = []) => validations.map(({ type, validation, errorMessage }) => (
   { [type]: validation, message: errorMessage }));
 
@@ -91,9 +89,18 @@ const handleSave = (form, handler) => {
 
 const internalHandler = () => console.log('internal');
 
+type Props = {
+  formConfig:any,
+  getFieldDecorator: Function,
+  showHandler: Boolean,
+  handleFromOutside: Boolean,
+  externalHandler: Function,
+  form:any,
+};
+
 const GForm = ({
   formConfig, form, externalHandler, showHandler = true, handleFromOutside = false,
-}) => {
+}: Props) => {
   const { getFieldDecorator } = form;
   useEffect(() => {
     if (handleFromOutside) {

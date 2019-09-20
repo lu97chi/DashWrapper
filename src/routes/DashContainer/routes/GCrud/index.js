@@ -11,7 +11,7 @@ import { ColumnMaker } from './helpers';
 
 const { Search } = Input;
 
-type Props = { intialConfig: Object, };
+type Props = { intialConfig: Object, columns: any, data:any, headerButtons: any };
 
 
 const filterData = (data, filterProp, filterValue) => {

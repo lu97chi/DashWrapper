@@ -3,17 +3,21 @@ import React from 'react';
 import { component } from 'rrsx';
 import Layout from './components/Layout';
 
-type Props = { children: any, className: string };
+type layoutConfigType = {
+  header: Boolean,
+  sidebar: Boolean
+}
+type Props = { layoutData: any, layoutConfig: layoutConfigType, theme: any, PropRouter: any };
 
 const DashRouter = ({
   PropRouter, theme, layoutData, layoutConfig,
-}) => {
+}:Props) => {
   const { header, sidebar } = layoutConfig;
   const { HeaderData, SidebarData } = layoutData;
   return (
     <Layout
-      header
-      sidebar
+      header={header}
+      sidebar={sidebar}
       headerData={HeaderData}
       sidebarData={SidebarData}
       theme={theme}

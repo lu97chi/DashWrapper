@@ -39,7 +39,7 @@ const Dash = ({
               setOpenSidebar={() => setOpenSidebar(!openSidebar)}
             />
             <Row style={{ maxHeight: '90%', overflowY: 'auto', padding: '24px' }}>
-              <AnimatedCol sm={24} style={{ zIndex: 2 }}>
+              <AnimatedCol sm={24} style={{ zIndex: 1 }}>
                 <Section>
                   {children}
                 </Section>

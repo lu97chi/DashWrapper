@@ -8,6 +8,7 @@ import { HeaderContainer, ButtonsContainer } from './styledComponents';
 import GForm from '../../../../../../components/GenericForm';
 import { Caller } from '../../caller';
 import ActionCreatorButton from './ActionCreatorButton';
+import { useHeader } from './hooks';
 
 type Props = { buttons: Object, title: String };
 
@@ -83,11 +84,18 @@ const ButtonsConfig = (
 
 
 const Header = ({ buttons, title }: Props) => {
-  const [visible, setVisible] = useState(false);
-  const [confirmLoading, setConfirmLoading] = useState(false);
-  const [callingFromOutside, setCallingFromOutside] = useState(false);
-  const [activeConfiguration, setActiveConfiguration] = useState(null);
-  const [activeButtonCaller, setActiveButtonCaller] = useState(0);
+  const {
+    visible,
+    setVisible,
+    confirmLoading,
+    setConfirmLoading,
+    callingFromOutside,
+    setCallingFromOutside,
+    activeButtonCaller,
+    setActiveButtonCaller,
+    activeConfiguration,
+    setActiveConfiguration,
+  } = useHeader();
   const { intialConfig } = buttons;
   return (
     <HeaderContainer>

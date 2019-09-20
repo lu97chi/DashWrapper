@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import {
   Checkbox, Row, Col, Radio, Switch, Select, Upload, Button, Icon,
@@ -6,7 +8,36 @@ import { ToggleHint } from './styledComponents';
 
 const { Option } = Select;
 
-export const CheckboxGen = (fieldOptions) => (
+type Options = {
+  label: String,
+  value: String,
+  cols: ?Number
+}
+
+type ObjectOptions = {
+  [key: Number]: String,
+}
+
+type ExtraValidation = {
+  type: String,
+  errorMessage: String,
+  validation: any // function or number or string that indicates how to validate the field
+}
+
+type FieldOptions = {
+  label: String,
+  initialValue: ?String | ?Array<String> | ?Number,
+  placeholder: ?String,
+  selector: String,
+  cols: Number,
+  type: String,
+  options: ?Array<Options> | Object<ObjectOptions>,
+  hint: ?String,
+  hintHorientation: ?String,
+  extraValidations: ?Array<ExtraValidation>,
+}
+
+export const CheckboxGen = (fieldOptions: Array<FieldOptions>) => (
   <Checkbox.Group style={{ width: '100%' }}>
     <Row>
       {fieldOptions.map((option) => (
@@ -18,7 +49,7 @@ export const CheckboxGen = (fieldOptions) => (
   </Checkbox.Group>
 );
 
-export const RadioButtonGen = (fieldOptions) => (
+export const RadioButtonGen = (fieldOptions: Array<FieldOptions>) => (
   <Radio.Group>
     {
             fieldOptions.map((option) => (
@@ -30,7 +61,7 @@ export const RadioButtonGen = (fieldOptions) => (
   </Radio.Group>
 );
 
-export const RadioGen = (fieldOptions) => (
+export const RadioGen = (fieldOptions: Array<FieldOptions>) => (
   <Radio.Group>
     {
         fieldOptions.map((option) => (
@@ -40,7 +71,7 @@ export const RadioGen = (fieldOptions) => (
   </Radio.Group>
 );
 
-export const SwitchGen = (fieldOptions) => {
+export const SwitchGen = (fieldOptions: Array<FieldOptions>) => {
   const { hintHorientation, hint } = fieldOptions;
   return (
     <>
@@ -57,7 +88,7 @@ export const SwitchGen = (fieldOptions) => {
   );
 };
 
-export const MultipleGen = (fieldOptions, type) => (
+export const MultipleGen = (fieldOptions: Array<FieldOptions>, type: String) => (
   <Select mode={type}>
     {
         fieldOptions.map(({ label, value }) => <Option value={value}>{label}</Option>)

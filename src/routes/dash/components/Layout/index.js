@@ -8,7 +8,7 @@ import Sidebar from '../Sidebar';
 import Header from '../Header';
 
 type Props = {
-  children: any,
+   children: any,
    className: string,
    header: Boolean,
    sidebar: Boolean,
@@ -31,22 +31,22 @@ const Dash = ({
             logoConfig={logoConfig}
           />
         ) : null}
-        {header ? (
-          <div style={{ width: '100%' }}>
+        <div style={{ width: '100%' }}>
+          {header ? (
             <Header
               {...headerData}
               open={openSidebar}
               setOpenSidebar={() => setOpenSidebar(!openSidebar)}
             />
-            <Row style={{ maxHeight: '90%', overflowY: 'auto', padding: '24px' }}>
-              <AnimatedCol sm={24} style={{ zIndex: 1 }}>
-                <Section>
-                  {children}
-                </Section>
-              </AnimatedCol>
-            </Row>
-          </div>
-        ) : null}
+          ) : null}
+          <Row style={{ maxHeight: '90%', overflowY: 'auto', padding: '24px' }}>
+            <AnimatedCol sm={24} style={{ zIndex: 1 }}>
+              <Section>
+                {children}
+              </Section>
+            </AnimatedCol>
+          </Row>
+        </div>
       </div>
     </div>
   );

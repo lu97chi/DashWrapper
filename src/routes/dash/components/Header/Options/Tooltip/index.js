@@ -4,10 +4,10 @@ import { component } from 'rrsx';
 import { Tooltip } from 'antd';
 import { MenuItem, IconCustom } from '../../styledComponents';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string };
+type Props = { option: Object, handleClick: Function };
 
 const ToolTip = ({
-  style, children, className, option, handleClick,
+  option, handleClick,
 }: Props) => {
   const {
     text,

@@ -8,8 +8,8 @@ const DashContainer = () => (
     PropRouter={Router}
     Theme={Theme}
     layoutConfig={{
-      header: false,
-      sidebar: false,
+      header: true,
+      sidebar: true,
     }}
     layoutData={{
       HeaderData,

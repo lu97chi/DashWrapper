@@ -4,7 +4,7 @@ import { component } from 'rrsx';
 import { InputA } from './styledComponents';
 import { MenuItem, IconCustom } from '../../styledComponents';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string, item: ItemType};
+type Props = { option: Object};
 
 const clickOutside = (ref, handler) => {
   function handleClick(event) {
@@ -22,13 +22,12 @@ const clickOutside = (ref, handler) => {
 };
 
 const Searcher = ({
-  style, children, className, option,
+  option,
 }: Props) => {
   const [searchOpen, setSearchOpen] = useState(false);
   const outsideRef = useRef(null);
   clickOutside(outsideRef, setSearchOpen);
   const {
-    text,
     icon,
   } = option;
   return (

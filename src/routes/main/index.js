@@ -1,13 +1,13 @@
 // @flow
-import React, { CSSProperties, useEffect } from 'react';
-import { component, useService, useController } from 'rrsx';
-import { useObserver, useObservable } from 'mobx-react-lite';
+import React, { CSSProperties } from 'react';
+import { component, useService } from 'rrsx';
+import { useObservable } from 'mobx-react-lite';
 import TodoService, { Item, model } from './services/todo.service';
 import TestController from './controllers/test.controller';
 
-type Props = { children: React.Component, style: CSSProperties };
+type Props = { style: CSSProperties };
 
-const Main = ({ style, children }: Props) => {
+const Main = ({ style }: Props) => {
   const textInput = useObservable({ text: '' });
   const todo = useService<TodoService>(TodoService, { attach: true });
 
@@ -20,8 +20,8 @@ const Main = ({ style, children }: Props) => {
           type="text"
           placeholder="escribir item"
         />
-
         <button
+          type="button"
           onClick={() => {
             todo.list.push({ name: textInput.text });
           }}
@@ -31,13 +31,14 @@ const Main = ({ style, children }: Props) => {
       </div>
       <ul>
         {todo.list.map((item: Item, index) => (
-          <li
+          <button
+            type="button"
             onClick={() => {
               todo.delete(index);
             }}
           >
             {item.name}
-          </li>
+          </button>
         ))}
       </ul>
     </div>
@@ -52,6 +53,7 @@ const TempComponent = () => {
   return (
     <div>
       <button
+        type="button"
         onClick={() => {
           testC.showComponent();
         }}

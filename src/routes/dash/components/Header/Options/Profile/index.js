@@ -7,11 +7,11 @@ import {
 import { ProfileContainer } from './styledComponents';
 import { getNested } from './helpers';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string };
+type Props = { option: Object };
 
 
 const Profile = ({
-  style, children, className, option,
+  option,
 }: Props) => {
   const {
     nested,
@@ -26,9 +26,9 @@ const Profile = ({
         <Menu>
           {getNested(nested)}
         </Menu>
-)}
+      )}
     >
-      <ProfileContainer className={className} style={style}>
+      <ProfileContainer>
         {
             icon !== 'default' ? <Avatar src="https://www.ravensbourne.ac.uk/media/7259/male-student-working-and-smiling.jpg?anchor=center&mode=crop&width=1100&heightratio=1&quality=100&slimmage=true&rnd=131788872900000000" /> : (
               <Avatar>

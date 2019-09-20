@@ -4,14 +4,14 @@ import { component } from 'rrsx';
 import { Row, Col } from 'antd';
 import { getOption } from './helper';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string };
+type Props = { data: Array<any>};
 
 const handler = (item) => {
   console.log(item);
 };
 
 const Options = ({
-  style, children, className, data,
+  data,
 }: Props) => (
   <Row type="flex" justify="end" align="middle">
     { data.map((option) => (

@@ -1,11 +1,11 @@
 // @flow
 import React, { useState } from 'react';
 import { component } from 'rrsx';
-import { Dropdown, Menu } from 'antd';
+import { Dropdown, Menu, Button } from 'antd';
 import { MenuItem, IconCustom, Badge } from '../../styledComponents';
 import { makeNotificationData } from './helpers';
 
-type Props = { children: any, style: CSSStyleDeclaration, className: string };
+type Props = { option: Object, handleClick: Function };
 
 const Notification = ({
   option, handleClick,
@@ -22,7 +22,7 @@ const Notification = ({
   return (
     <Dropdown trigger={['click']} overlay={<Menu style={{ width: '200px' }}>{makeNotificationData(notificationData)}</Menu>}>
       <MenuItem onClick={() => handleClick(option)}>
-        <Badge badgeColor={badgeColor}>{notificationState}</Badge>
+        <Badge badgeColor={badgeColor}><span>{notificationState}</span></Badge>
         <IconCustom iconSize={iconSize} iconColor={iconColor} type={icon} />
       </MenuItem>
     </Dropdown>

@@ -9,7 +9,8 @@ function makeUrl(url, params) {
   return auxUrl;
 }
 
-function makeUrlConfig(url, config) {
+// config type can take dinamic key : values pair
+function makeUrlConfig(url, config: any) {
   const { endPoint } = config;
   const dotAuxes = [];
   const dashAuxes = [];

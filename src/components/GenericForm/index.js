@@ -90,8 +90,7 @@ const handleSave = (form, handler) => {
 const internalHandler = () => console.log('internal');
 
 type Props = {
-  formConfig:any,
-  getFieldDecorator: Function,
+  formConfig:Object, // already given in component,
   showHandler: Boolean,
   handleFromOutside: Boolean,
   externalHandler: Function,
